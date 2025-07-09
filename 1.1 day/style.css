@@ -1,0 +1,39 @@
+html, body{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    /* color: red; */
+    /* background-color:brown ; */
+    font-family: sans;
+
+}
+
+#first {
+    color: blueviolet;
+}
+
+.second {
+    color: aqua;
+}
+ p.para {
+    /* background-color: antiquewhite; */
+    color: brown;
+    font-weight: 400;
+    font-size: 50px;
+    text-align: end;
+ }
+
+ .box {
+    height: 500px;
+    width: 500px;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items:end ;
+ }
