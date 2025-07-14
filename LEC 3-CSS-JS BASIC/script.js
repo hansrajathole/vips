@@ -1,4 +1,4 @@
-let a 
+// let a 
 
 // var a = 20
 // console.log(a);
@@ -42,12 +42,14 @@ let a
 // console.log(sum(10,20));
 
 // ARRAY 
-let arr = [10,20,30,40]
+// let arr = [10,20,30,40]
 // console.log("YE hamara old arr hai :",arr);
-console.log("phle :",arr);
+// console.log("phle :",arr);
 
-let newArr = arr
-newArr.push(50)
-console.log("new wala",newArr);
+// let newArr = arr
+// newArr.push(50)
+// console.log("new wala",newArr);
 
-console.log("old wala",arr);
+// console.log("old wala",arr);
+
+
