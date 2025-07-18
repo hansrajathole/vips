@@ -1,0 +1,26 @@
+/* .list {
+    border: 2px solid black;
+}
+
+#list1{
+    background-color: red;
+}
+
+#list-id{
+    background-color: salmon;
+} */
+
+
+
+.box {
+    height: 100px;
+    width: 100px;
+    background-color: aquamarine;
+}
+
+.container{
+    height: 20px;
+    width: 20px;
+    background-color: red;
+    border-radius: 50%;
+}
