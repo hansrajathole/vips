@@ -16,44 +16,37 @@ router.get("/", (req, res) => {
 
 router.post("/add", upload.single("image"), async (req, res) => {
 
-  console.log(req.body);
-  console.log(req.file);
-  
-//   console.log("file data", req.file);
-
-  // const imagekit = new ImageKit({
-  //   publicKey: "public_M0PAK4NmC1d2995cVHB6hjiBgaE=",
-  //   privateKey : "private_KT7FkfaTOTLNy6lVG+V7iKE2ba4=",
-  //   urlEndpoint: "https://ik.imagekit.io/ls436o8px",
-  // });
+  const imagekit = new ImageKit({
+    publicKey: "public_M0PAK4NmC1d2995cVHB6hjiBgaE=",
+    privateKey : "private_KT7FkfaTOTLNy6lVG+V7iKE2ba4=",
+    urlEndpoint: "https://ik.imagekit.io/ls436o8px",
+  });
 
 
-  // const result = await imagekit.upload({
-  //   file : req.file.buffer,
-  //   fileName : req.file.originalname,
-  //   isPrivateFile : false,
-  //   isPublished : true
-  // })
+  const result = await imagekit.upload({
+    file : req.file.buffer,
+    fileName : req.file.originalname,
+    isPrivateFile : false,
+    isPublished : true
+  })
 
-  // const imageUrl = result.url
+  const imageUrl = result.url
 
-//   console.log("iamge  url :" , image); 
-  
-  
-  // const { title, description, category, price } = req.body;
+ 
+  const { title, description, category, price } = req.body;
   
 
-  //     const product = new productModel(
-  //         {
-  //             title : title,
-  //             description : description,
-  //             category : category,
-  //             price : price,
-  //             image : imageUrl
-  //          }
-  // )
+      const product = new productModel(
+          {
+              title : title,
+              description : description,
+              category : category,
+              price : price,
+              image : imageUrl
+           }
+  )
 
-  //     await product.save()
+      await product.save()
 
   res.json({message : "data aaya"})
 });
@@ -66,7 +59,7 @@ router.get("/:id",async (req, res)=>{
     console.log(product);
 
 
-    res.render("productDetail" ,{product : product})
+    res.status(200).json({message : "data mil gya " , product})
     
 })
 
