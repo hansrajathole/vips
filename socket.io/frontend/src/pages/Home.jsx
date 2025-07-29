@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios"
-import "./Home.css"
+import { useNavigate } from 'react-router-dom'
+
 
 const Home = () => {
+
+    const navigate = useNavigate()
 
     useEffect(() => {
       getRoom()
@@ -43,14 +46,18 @@ const Home = () => {
 
 
   return (
-    <div className='main'>
-      <button onClick={()=>{setopenModal(true)}}>Create Room</button>
+    <div className='p-10'>
+      <button onClick={()=>{setopenModal(true)}} className='border  p-5 rounded-2xl'>Create Room</button>
+      
+      <br /> <br /><hr />
+      <br />
       {
-        openModal && <div className="roomform">
+        openModal && <div className="h-screen w-screen flex justify-center items-center">
         <form onSubmit={handleSubmit}>
             <input type="text" name="room" id="" 
             value={roomName}
             onChange={(e)=>{setroomName(e.target.value)}}
+            className='border p-3.5'
             />
             <button>Create</button>
         </form>
@@ -60,7 +67,7 @@ const Home = () => {
   
         {
             roomData.map((elem , index)=>{
-                return <div className='room'>
+                return <div className="p-2 border rounded-2xl w-fit cursor-pointer" onClick={()=>{navigate(`/room/${elem._id}`)}}>
                     {elem.name}
                 </div>
             })

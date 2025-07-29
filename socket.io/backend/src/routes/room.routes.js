@@ -21,4 +21,13 @@ router.get("/allroom",async (req,res)=>{
 })
 
 
+router.get("/room/:roomId", async (req, res)=>{
+    const {roomId} = req.params
+
+    const room = await roomModel.findById(roomId)
+
+    res.status(200).json({message : "data aa gya" , room})
+})
+
+
 module.exports = router

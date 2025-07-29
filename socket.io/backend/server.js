@@ -9,14 +9,14 @@ const io = require('socket.io')(server, {
 });
 
 io.on('connection', socket => {
-    const roomId = socket.handshake.query.rooomId;
+    const roomId = socket.handshake.query.roomId;
     socket.join(roomId);
 
     console.log('New client connected');
 
     socket.on("chacha", msg => {
         console.log(msg);
-        socket.emit('chacha', msg);
+        socket.to(roomId).emit('chacha', msg);
     });
 });
 
