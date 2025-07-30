@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
 const Home = () => {
   const [productData, setProductData] = useState([]);
 
@@ -22,7 +23,9 @@ const Home = () => {
   };
 
   return (
-    <div className="container">
+   <div>
+      <Navbar/>
+     <div className="container">
 
       {productData.map((elem, index) => {
         return <div className="card" key={index}>
@@ -33,7 +36,7 @@ const Home = () => {
             />
           </div>
           <div className="bottom">
-            <Link to={`products/detail/${elem._id}`}>{elem.title}</Link>
+            <Link to={`/admin/products/detail/${elem._id}`}>{elem.title}</Link>
             <p>
               {elem.description}
             </p>
@@ -42,6 +45,7 @@ const Home = () => {
         </div>;
       })}
     </div>
+   </div>
   );
 };
 

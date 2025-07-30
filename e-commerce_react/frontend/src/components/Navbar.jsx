@@ -7,13 +7,13 @@ const Navbar = () => {
   return (
     <nav>
         <div className="left">
-             <Link to="/"><h2>Shopy</h2></Link>
+             <Link to="/admin"><h2>Shopy</h2></Link>
         </div>
         <div className='search'>
             <input type="text" />
         </div>
         <div className="right">
-          <Link to="/products/add">Add new Product</Link>
+          <Link to="/admin/products/add">Add new Product</Link>
         </div>
     </nav>
   )

@@ -8,12 +8,14 @@ import ProductDetail from './Pages/ProductDetail'
 const App = () => {
   return (
     <div>
-      <Navbar/>
+
       <Routes>
-        <Route  path='/' element={<Home/>}/>
-        <Route path='/products/add' element={<AddProducts/>}/>
-        <Route path='/products/detail/:productId'  element={<ProductDetail/>}/>
-      </Routes>
+        <Route path='/' element={<h1>user</h1>}/>
+ 
+        <Route  path='/admin/' element={<Home/>}/>
+        <Route  path='/admin/products/add' element={<AddProducts/>}/>
+        <Route  path='/admin/products/detail/:productId'  element={<ProductDetail/>}/>
+      </Routes> 
 
     </div>
 
